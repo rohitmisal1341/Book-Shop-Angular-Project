@@ -1,0 +1,7 @@
+make sure node install in your system.
+commands to run the angular project
+
+1) json-server --watch data.json
+2) ng serve
+
+Thank you !!!!
