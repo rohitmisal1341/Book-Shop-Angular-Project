@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center">
+                    <h1>SignUP</h1>
+                    <h6>Please Register your Self</h6>
+                </div>
+                <form action="">
+                    <form [formGroup]="signupForm" (ngSubmit)="signup()">
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Full Name</label>
+                            <input formControlName="fullname" type="text" class="form-control" id="exampleInputPassword1">
+                            <span *ngIf="signupForm.controls['fullname'].dirty && signupForm.hasError('required','fullname')" class="text-danger">*fullname is Required</span>
+                            
+                          </div>
+                          <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Mobile</label>
+                            <input formControlName="mobile" type="number" class="form-control" id="exampleInputPassword1">
+                            <span *ngIf="signupForm.controls['mobile'].dirty && signupForm.hasError('required','mobile')" class="text-danger">*mobile is Required</span>
+                          </div>
+                        <div class="mb-3">
+                          <label for="exampleInputEmail1" class="form-label">Email address</label>
+                          <input type="email" formControlName="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                          <span *ngIf="signupForm.controls['email'].dirty && signupForm.hasError('required','email')" class="text-danger">*email is Required</span>
+                          
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleInputPassword1" class="form-label">Password</label>
+                          <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1">
+                          <span *ngIf="signupForm.controls['password'].dirty && signupForm.hasError('required','password')" class="text-danger">*password is Required</span>
+                        </div>
+                        
+                        <button   [disabled]="! signupForm.valid"  type="submit" class="btn btn-primary">Register</button>
+                      </form>
+                      <a href="/login">exting user signIn here</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
